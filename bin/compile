@@ -42,6 +42,7 @@ if [ ! -f $CACHE_FILE ]; then
 
   # cache for future deploys
   echo "-----> Caching ImageMagick installation"
+  mkdir -p $VENDOR_DIR
   cd $VENDOR_DIR
   mkdir -p $CACHE_DIR
   REL_INSTALL_DIR="imagemagick"
@@ -50,6 +51,7 @@ if [ ! -f $CACHE_FILE ]; then
 else
   # cache exists, extract it
   echo "-----> Extracting ImageMagick $CACHE_FILE => $VENDOR_DIR"
+  mkdir -p $VENDOR_DIR
   tar xzf $CACHE_FILE -C $VENDOR_DIR
 fi
 
